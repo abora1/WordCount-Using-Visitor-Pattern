@@ -5,11 +5,14 @@ import java.io.File;
 import wordCount.util.FileProcessor;
 import wordCount.util.Logger;
 import wordCount.util.Logger.DebugLevel;
+import wordCount.modules.PopulateVisitor;
+import wordCount.modules.Visitor;
 import wordCount.treesForStrings.BST;
+import wordCount.treesForStrings.BSTNode;
 public class Driver {
 	public static void main(String[] args) {
 		try{
-			BST tree=new BST();
+			
 			if (args.length != 2) {
 				System.out
 						.println("Please Enter Input file,K value and Debug value along with the debug value");
@@ -30,18 +33,15 @@ public class Driver {
 						DebugLevel.FILE_PROCESSOR);
 				System.exit(0);
 			}
+			BST bst=new BST();
+			BSTNode bstnode=new BSTNode();
 			FileProcessor fp=new FileProcessor(f1);
-			String s=fp.readline();
-			s = s.replace(".", "");
-			String[] elements=s.split("\\s+");
-			for(int z=0;z<elements.length;z++)
-			{
-				tree.put(elements[z]);
-			}
-			tree.printnodes();
-			System.out.println(tree.getCount());
-			System.out.println(tree.getCharCount());
-			System.out.println(tree.totalcount());
+			Visitor v1=new PopulateVisitor(fp);
+			bst.accept(v1);
+			
+			//System.out.println(tree.getCount());
+			//System.out.println(tree.getCharCount());
+			//System.out.println(tree.totalcount());
 			
 			}
 		catch(Exception e)

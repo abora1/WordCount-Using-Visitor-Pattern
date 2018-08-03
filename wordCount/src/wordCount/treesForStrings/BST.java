@@ -1,4 +1,7 @@
 package wordCount.treesForStrings;
+
+import wordCount.modules.Visitor;
+
 public class BST
 {
     private BSTNode root;
@@ -44,5 +47,7 @@ public class BST
 	  int x=BSTNode.getCountduplicate();
 	  return x+count;
    }
-    
+   public void accept(Visitor visitor) {
+       visitor.visit(this);
+   }
 }

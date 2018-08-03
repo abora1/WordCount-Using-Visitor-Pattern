@@ -7,6 +7,7 @@ public class BSTNode
    static int countduplicatewords=0;
     public static int getCountduplicatewords() {
 	return countduplicatewords;
+	
 }
 
 public static void setCountduplicatewords(int countduplicatewords) {
@@ -51,7 +52,11 @@ public static void setCountduplicatewords(int countduplicatewords) {
   
     }
 
-    //if key not found in BST then it is added. If jey already exists then that node's value
+    public BSTNode() {
+		// TODO Auto-generated constructor stub
+	}
+
+	//if key not found in BST then it is added. If jey already exists then that node's value
     //is updated.
     public void put( String key )
     {
