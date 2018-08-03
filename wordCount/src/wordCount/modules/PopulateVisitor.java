@@ -23,7 +23,7 @@ public class PopulateVisitor implements Visitor{
                    bst.put(wordsLine[i]);
                 }
             }
-			bst.printnodes();
+			
 		}
 		catch(Exception e){
 			System.out.println("ERROR WHILE INSERTING DATA FROM FILE TO TREE");

@@ -27,16 +27,14 @@ public class BST
 		if (node != null) {
 			count++;
 			traverseBST(node.left);
-			System.out.println(node.getKey());
 			charcount=charcount+node.getKey().length();
 			traverseBST(node.right);
 		}
 	}
-    public void printnodes(){
-    	traverseBST(this.root);
-    }
+   
     public int getCount() 
     {
+    	traverseBST(this.root);
         return count;
     }
    public int getCharCount(){
