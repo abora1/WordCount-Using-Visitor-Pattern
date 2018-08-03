@@ -4,9 +4,14 @@ import wordCount.modules.Visitor;
 
 public class BST
 {
+	int count;
+	int charcount;
     private BSTNode root;
-    int count=0;
-    int charcount=0;
+ public BST(){
+	  count=0;
+	  charcount=0; 
+ }
+    
     public void put( String key )
     {
         if ( root == null )

@@ -3,8 +3,8 @@ package wordCount.treesForStrings;
 public class BSTNode
 {
     private String key;
-   static int countduplicate=0;
-   static int countduplicatewords=0;
+   static int countduplicate;
+   static int countduplicatewords;
     public static int getCountduplicatewords() {
 	return countduplicatewords;
 	
@@ -53,7 +53,8 @@ public static void setCountduplicatewords(int countduplicatewords) {
     }
 
     public BSTNode() {
-		// TODO Auto-generated constructor stub
+    	countduplicate=0;
+    	countduplicatewords=0;
 	}
 
 	//if key not found in BST then it is added. If jey already exists then that node's value
