@@ -39,7 +39,10 @@ public class Driver {
 				tree.put(elements[z]);
 			}
 			tree.printnodes();
-			System.out.println(tree.getLeafCount());
+			System.out.println(tree.getCount());
+			System.out.println(tree.getCharCount());
+			System.out.println(tree.totalcount());
+			
 			}
 		catch(Exception e)
 		{

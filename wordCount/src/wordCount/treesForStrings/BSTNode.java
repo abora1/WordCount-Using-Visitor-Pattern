@@ -3,8 +3,25 @@ package wordCount.treesForStrings;
 public class BSTNode
 {
     private String key;
+   static int countduplicate=0;
+   static int countduplicatewords=0;
+    public static int getCountduplicatewords() {
+	return countduplicatewords;
+}
 
-    public BSTNode left, right;
+public static void setCountduplicatewords(int countduplicatewords) {
+	BSTNode.countduplicatewords = countduplicatewords;
+}
+
+	public static int getCountduplicate() {
+		return countduplicate;
+	}
+
+	public void setCountduplicate(int countduplicate) {
+		this.countduplicate = countduplicate;
+	}
+
+	public BSTNode left, right;
 
    public int countDistinct=0;
 
@@ -62,10 +79,10 @@ public class BSTNode
                 right = new BSTNode( key);
             }
         }
-        else
+        else if(key.compareTo( this.key ) == 0)
         {
-            //update this one
-            
+          countduplicate++;
+          countduplicatewords=countduplicatewords+key.length();
         }
     }
    
