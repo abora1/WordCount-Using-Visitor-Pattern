@@ -5,18 +5,19 @@ import java.io.File;
 import wordCount.util.FileProcessor;
 import wordCount.util.Logger;
 import wordCount.util.Logger.DebugLevel;
-
+import wordCount.treesForStrings.BST;
 public class Driver {
 	public static void main(String[] args) {
 		try{
-			if (args.length != 3) {
+			BST tree=new BST();
+			if (args.length != 2) {
 				System.out
 						.println("Please Enter Input file,K value and Debug value along with the debug value");
 				System.exit(0);
 			}
 			String input = args[0];
-			int k = Integer.parseInt(args[1]);
-			int debug = Integer.parseInt(args[2]);
+			//int k = Integer.parseInt(args[1]);
+			int debug = Integer.parseInt(args[1]);
 			if(debug>4 || debug<1)
 			{
 				System.out.println("The Debug Value is out of scope it should be Between 1 And 4");
@@ -30,10 +31,20 @@ public class Driver {
 				System.exit(0);
 			}
 			FileProcessor fp=new FileProcessor(f1);
-		}
+			String s=fp.readline();
+			s = s.replace(".", "");
+			String[] elements=s.split("\\s+");
+			for(int z=0;z<elements.length;z++)
+			{
+				tree.put(elements[z]);
+			}
+			tree.printnodes();
+			System.out.println(tree.getLeafCount());
+			}
 		catch(Exception e)
 		{
 			
+		e.printStackTrace();	
 		}
 		}
 }
