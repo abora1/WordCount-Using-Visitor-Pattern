@@ -24,6 +24,7 @@ public class Results {
 	public void storeNewResult(String s) {
 		resList.add(s);
 	}
+
 	public void writeToFile(String s) {
 		File f1 = null;
 		FileWriter fp1 = null;

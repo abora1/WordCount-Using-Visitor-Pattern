@@ -1,10 +1,10 @@
 package wordCount.util;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
-
 
 import wordCount.util.Logger;
 import wordCount.util.Logger.DebugLevel;
@@ -15,13 +15,13 @@ public class FileProcessor {
 	}
 
 	private BufferedReader br = null;
-	private Results rs=new Results();
+	private Results rs = new Results();
+
 	public FileProcessor(File input) {
 		try {
-			
+
 			br = new BufferedReader(new FileReader(input));
-			Logger.writeMessage("New File has Been Accepted",
-					DebugLevel.FILE_PROCESSOR);
+			
 
 		} catch (IOException e) {
 			Logger.writeMessage("NO INPUT FILE FOUND",

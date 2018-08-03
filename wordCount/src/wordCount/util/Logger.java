@@ -8,7 +8,7 @@ public class Logger {
 
 	// enums for the Levels
 	public static enum DebugLevel {
-		CONSTRUCTOR, FILE_PROCESSOR, NONE, INPUT, OUTPUT
+		CONSTRUCTOR, FILE_PROCESSOR, NONE, OUTPUTS, PERFORMANCE
 	};
 
 	private static DebugLevel debugLevel;
@@ -17,10 +17,10 @@ public class Logger {
 	public static void setDebugValue(int levelIn) {
 		switch (levelIn) {
 		case 4:
-			debugLevel = DebugLevel.OUTPUT;
+			debugLevel = DebugLevel.PERFORMANCE;
 			break;
 		case 3:
-			debugLevel = DebugLevel.INPUT;
+			debugLevel = DebugLevel.OUTPUTS;
 			break;
 		case 2:
 			debugLevel = DebugLevel.CONSTRUCTOR;
